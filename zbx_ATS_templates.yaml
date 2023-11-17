@@ -1,0 +1,404 @@
+zabbix_export:
+  version: '6.0'
+  date: '2023-11-16T08:58:34Z'
+  groups:
+    - uuid: 7df96b18c230490a9a0a9e2307226338
+      name: Templates
+  templates:
+    - uuid: bda2966085ea41f6959269e666006efb
+      template: 'Apache Traffic Server by HTTP'
+      name: 'Apache Traffic Server by HTTP'
+      groups:
+        - name: Templates
+      items:
+        - uuid: bc12110f7fae4794a0fb92ca3778a597
+          name: bytes_total
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.bytes_total
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.bytes_total"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: fc2a34dc21b543589db9a64825e9c6df
+          name: bytes_used
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.bytes_used
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.bytes_used"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 93964fec334744eb865912795b058a0e
+          name: ram_cache.bytes_used
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.ram_cache.bytes_used
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.ram_cache.bytes_used"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 16b9c716a811427881821bf7dbcaf701
+          name: 'RAM cache hit'
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.ram_cache.hits
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.ram_cache.hits"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 4f8ccc06781a441788b8ba0791fccc01
+          name: ram_cache.total_bytes
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.ram_cache.total_bytes
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.ram_cache.total_bytes"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 0ba0862dc23a4a32bb150444cc575ae0
+          name: 'Disk cache miss'
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.read.failure
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.read.failure"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: e1ac189453f34be785713192644edc5e
+          name: 'Disk cache hit'
+          type: HTTP_AGENT
+          key: proxy.process.cache.volume_0.read.success
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.cache.volume_0.read.success"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 60842b9683824b1faaea15c2af735ded
+          name: process.current_server_connections
+          type: HTTP_AGENT
+          key: proxy.process.current_server_connections
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.current_server_connections"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: acefa32456da47abb1ead2c7b27f7149
+          name: HTTP_2xx_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.2xx_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.2xx_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 884614f3114c4841802de3e91801bd02
+          name: HTTP_4xx_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.4xx_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.4xx_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 58296099d6274df2a7783535f8e1a3f1
+          name: HTTP_5xx_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.5xx_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.5xx_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: fd3dae8a49394ad584b3ee40a74a40d5
+          name: HTTP_400_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.400_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.400_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: b52cd4d087344a12ad0d28c10cdea7f4
+          name: HTTP_404_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.404_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.404_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: c7fa6f882c324a2ea6b100aaab5299ff
+          name: HTTP_502_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.502_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.502_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: bf092320c76c47d0b004fde0303cdfec
+          name: HTTP_504_responses
+          type: HTTP_AGENT
+          key: proxy.process.http.504_responses
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.504_responses"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 7a2768afcae44f278ad96214bf2f0fc1
+          name: current_active_client_connections
+          type: HTTP_AGENT
+          key: proxy.process.http.current_active_client_connections
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.current_active_client_connections"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 45cd2392e41f47e3bb7599874b36192a
+          name: current_cache_connections
+          type: HTTP_AGENT
+          key: proxy.process.http.current_cache_connections
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.current_cache_connections"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 30d971a50df64283bcd7eee99449cd1f
+          name: current_client_connections
+          type: HTTP_AGENT
+          key: proxy.process.http.current_client_connections
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.current_client_connections"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 2db32fe56dde4bd0b927e8e38c32356c
+          name: current_client_transactions
+          type: HTTP_AGENT
+          key: proxy.process.http.current_client_transactions
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.current_client_transactions"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: cc63c254c96240eeb8fc9847caa29c96
+          name: current_server_connections
+          type: HTTP_AGENT
+          key: proxy.process.http.current_server_connections
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.current_server_connections"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 4d70fcb90f994a6eac7ce026343c4d82
+          name: current_server_transactions
+          type: HTTP_AGENT
+          key: proxy.process.http.current_server_transactions
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.current_server_transactions"]'
+          url: 'http://{HOST.IP}/_stats'
+        - uuid: 65ea9c22ffa84b688f10ca15ed895cbe
+          name: Total_server_connections
+          type: HTTP_AGENT
+          key: proxy.process.http.total_server_connections
+          history: 2d
+          trends: 90d
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - '$.global.["proxy.process.http.total_server_connections"]'
+            - type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+          url: 'http://{HOST.IP}/_stats'
+  graphs:
+    - uuid: 79d10c7b43354ef28220f83d652a523f
+      name: 'Disk cache'
+      graph_items:
+        - color: 00C800
+          calc_fnc: ALL
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.bytes_used
+        - sortorder: '1'
+          color: C80000
+          calc_fnc: ALL
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.bytes_total
+    - uuid: 91fdc0f6b0c24d94819d1aab6fa98a77
+      name: Hits
+      graph_items:
+        - drawtype: GRADIENT_LINE
+          color: DD0000
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.read.failure
+        - sortorder: '1'
+          drawtype: GRADIENT_LINE
+          color: '000000'
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.read.success
+        - sortorder: '2'
+          drawtype: GRADIENT_LINE
+          color: 00EE00
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.ram_cache.hits
+    - uuid: 98ac1f8b10a548cea672597c23a16586
+      name: 'HTTP Responses'
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.2xx_responses
+        - sortorder: '1'
+          color: FF0000
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.4xx_responses
+        - sortorder: '2'
+          color: 0040FF
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.5xx_responses
+        - sortorder: '3'
+          color: F44336
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.400_responses
+        - sortorder: '4'
+          color: C62828
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.404_responses
+        - sortorder: '5'
+          color: 5C6BC0
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.502_responses
+        - sortorder: '6'
+          color: '283593'
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.504_responses
+    - uuid: 8660944119ea4f49958be8beda986ddc
+      name: 'Ram cache'
+      graph_items:
+        - color: C80000
+          calc_fnc: ALL
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.ram_cache.bytes_used
+        - sortorder: '1'
+          color: 00C800
+          calc_fnc: ALL
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.cache.volume_0.ram_cache.total_bytes
+    - uuid: 8a2abb8f098645ca87fa4d422063801a
+      name: 'Server connections'
+      graph_items:
+        - color: C80000
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.current_server_connections
+        - sortorder: '1'
+          color: 0000C8
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.current_server_transactions
+        - sortorder: '2'
+          color: BF00FF
+          calc_fnc: MAX
+          item:
+            host: 'Apache Traffic Server by HTTP'
+            key: proxy.process.http.total_server_connections
